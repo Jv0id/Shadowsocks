@@ -49,7 +49,6 @@ Enjoy it!
 
 使用root用户登录，运行以下命令：
 
-1
 ./shadowsocks-all.sh uninstall
 启动脚本
 启动脚本后面的参数含义，从左至右依次为：启动，停止，重启，查看状态。

@@ -579,7 +579,7 @@ install_select() {
       hint="${software[$i - 1]}"
       echo -e "${green}${i}${plain}) ${hint}"
     done
-    read -p "Please enter a number (Default ${software[0]}):" selected
+    read -e -p "Please enter a number (Default ${software[0]}):" selected
     [ -z "${selected}" ] && selected="1"
     case "${selected}" in
     1 | 2 | 3 | 4)
@@ -597,8 +597,8 @@ install_select() {
 
 install_prepare_password() {
   echo "Please enter password for ${software[${selected} - 1]}"
-  read -p "(Default password: 880411jp):" shadowsockspwd
-  [ -z "${shadowsockspwd}" ] && shadowsockspwd="880411jp"
+  read -e -p "(Default password: 123456):" shadowsockspwd
+  [ -z "${shadowsockspwd}" ] && shadowsockspwd="123456"
   echo
   echo "password = ${shadowsockspwd}"
   echo
@@ -608,7 +608,7 @@ install_prepare_port() {
   while true; do
     dport=$(shuf -i 9000-19999 -n 1)
     echo -e "Please enter a port for ${software[${selected} - 1]} [1-65535]"
-    read -p "(Default port: ${dport}):" shadowsocksport
+    read -e -p "(Default port: ${dport}):" shadowsocksport
     [ -z "${shadowsocksport}" ] && shadowsocksport=${dport}
     expr ${shadowsocksport} + 1 &>/dev/null
     if [ $? -eq 0 ]; then
@@ -632,7 +632,7 @@ install_prepare_cipher() {
         hint="${common_ciphers[$i - 1]}"
         echo -e "${green}${i}${plain}) ${hint}"
       done
-      read -p "Which cipher you'd select(Default: ${common_ciphers[0]}):" pick
+      read -e -p "Which cipher you'd select(Default: ${common_ciphers[0]}):" pick
       [ -z "$pick" ] && pick=1
       expr ${pick} + 1 &>/dev/null
       if [ $? -ne 0 ]; then
@@ -649,7 +649,7 @@ install_prepare_cipher() {
         hint="${r_ciphers[$i - 1]}"
         echo -e "${green}${i}${plain}) ${hint}"
       done
-      read -p "Which cipher you'd select(Default: ${r_ciphers[1]}):" pick
+      read -e -p "Which cipher you'd select(Default: ${r_ciphers[1]}):" pick
       [ -z "$pick" ] && pick=2
       expr ${pick} + 1 &>/dev/null
       if [ $? -ne 0 ]; then
@@ -666,7 +666,7 @@ install_prepare_cipher() {
         hint="${go_ciphers[$i - 1]}"
         echo -e "${green}${i}${plain}) ${hint}"
       done
-      read -p "Which cipher you'd select(Default: ${go_ciphers[0]}):" pick
+      read -e -p "Which cipher you'd select(Default: ${go_ciphers[0]}):" pick
       [ -z "$pick" ] && pick=1
       expr ${pick} + 1 &>/dev/null
       if [ $? -ne 0 ]; then
@@ -694,7 +694,7 @@ install_prepare_protocol() {
       hint="${protocols[$i - 1]}"
       echo -e "${green}${i}${plain}) ${hint}"
     done
-    read -p "Which protocol you'd select(Default: ${protocols[0]}):" protocol
+    read -e -p "Which protocol you'd select(Default: ${protocols[0]}):" protocol
     [ -z "$protocol" ] && protocol=1
     expr ${protocol} + 1 &>/dev/null
     if [ $? -ne 0 ]; then
@@ -720,7 +720,7 @@ install_prepare_obfs() {
       hint="${obfs[$i - 1]}"
       echo -e "${green}${i}${plain}) ${hint}"
     done
-    read -p "Which obfs you'd select(Default: ${obfs[0]}):" r_obfs
+    read -e -p "Which obfs you'd select(Default: ${obfs[0]}):" r_obfs
     [ -z "$r_obfs" ] && r_obfs=1
     expr ${r_obfs} + 1 &>/dev/null
     if [ $? -ne 0 ]; then
@@ -743,7 +743,7 @@ install_prepare_libev_obfs() {
   if autoconf_version || centosversion 6; then
     while true; do
       echo -e "Do you want install simple-obfs for ${software[${selected} - 1]}? [y/n]"
-      read -p "(default: n):" libev_obfs
+      read -e -p "(default: n):" libev_obfs
       [ -z "$libev_obfs" ] && libev_obfs=n
       case "${libev_obfs}" in
       y | Y | n | N)
@@ -765,7 +765,7 @@ install_prepare_libev_obfs() {
           hint="${obfs_libev[$i - 1]}"
           echo -e "${green}${i}${plain}) ${hint}"
         done
-        read -p "Which obfs you'd select(Default: ${obfs_libev[0]}):" r_libev_obfs
+        read -e -p "Which obfs you'd select(Default: ${obfs_libev[0]}):" r_libev_obfs
         [ -z "$r_libev_obfs" ] && r_libev_obfs=1
         expr ${r_libev_obfs} + 1 &>/dev/null
         if [ $? -ne 0 ]; then
@@ -1155,7 +1155,7 @@ install_shadowsocks() {
 
 uninstall_shadowsocks_python() {
   printf "Are you sure uninstall ${red}${software[0]}${plain}? [y/n]\n"
-  read -p "(default: n):" answer
+  read -e -p "(default: n):" answer
   [ -z ${answer} ] && answer="n"
   if [ "${answer}" == "y" ] || [ "${answer}" == "Y" ]; then
     ${shadowsocks_python_init} status >/dev/null 2>&1
@@ -1186,7 +1186,7 @@ uninstall_shadowsocks_python() {
 
 uninstall_shadowsocks_r() {
   printf "Are you sure uninstall ${red}${software[1]}${plain}? [y/n]\n"
-  read -p "(default: n):" answer
+  read -e -p "(default: n):" answer
   [ -z ${answer} ] && answer="n"
   if [ "${answer}" == "y" ] || [ "${answer}" == "Y" ]; then
     ${shadowsocks_r_init} status >/dev/null 2>&1
@@ -1213,7 +1213,7 @@ uninstall_shadowsocks_r() {
 
 uninstall_shadowsocks_go() {
   printf "Are you sure uninstall ${red}${software[2]}${plain}? [y/n]\n"
-  read -p "(default: n):" answer
+  read -e -p "(default: n):" answer
   [ -z ${answer} ] && answer="n"
   if [ "${answer}" == "y" ] || [ "${answer}" == "Y" ]; then
     ${shadowsocks_go_init} status >/dev/null 2>&1
@@ -1239,7 +1239,7 @@ uninstall_shadowsocks_go() {
 
 uninstall_shadowsocks_libev() {
   printf "Are you sure uninstall ${red}${software[3]}${plain}? [y/n]\n"
-  read -p "(default: n):" answer
+  read -e -p "(default: n):" answer
   [ -z ${answer} ] && answer="n"
   if [ "${answer}" == "y" ] || [ "${answer}" == "Y" ]; then
     ${shadowsocks_libev_init} status >/dev/null 2>&1
@@ -1289,7 +1289,7 @@ uninstall_shadowsocks() {
       hint="${software[$i - 1]}"
       echo -e "${green}${i}${plain}) ${hint}"
     done
-    read -p "Please enter a number [1-4]:" un_select
+    read -e -p "Please enter a number [1-4]:" un_select
     case "${un_select}" in
     1 | 2 | 3 | 4)
       echo
