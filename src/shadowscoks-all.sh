@@ -4,7 +4,7 @@ export PATH
 #
 # Auto install Shadowsocks Server (all version)
 #
-# Copyright (C) 2018 -2019 Jiang <www.jpjny.xyz>
+# Copyright (C) 2018 -2019 Jv0id <www.jpjny.xyz>
 #
 # System Required:  CentOS 6+, Debian7+, Ubuntu12+
 
@@ -19,29 +19,29 @@ cur_dir=$(pwd)
 software=(Shadowsocks-Python ShadowsocksR Shadowsocks-Go Shadowsocks-libev)
 
 libsodium_file="libsodium-1.0.17"
-libsodium_url="https://github.com/Jv0id/Shadowsocks/blob/master/libsodium-1.0.17.tar.gz"
+libsodium_url="https://github.com/Jv0id/Shadowsocks/blob/master/src/pack/libsodium-1.0.17.tar.gz"
 
 mbedtls_file="mbedtls-2.16.0"
-mbedtls_url="https://github.com/Jv0id/Shadowsocks/blob/master/mbedtls-2.16.0-gpl.tgz"
+mbedtls_url="https://github.com/Jv0id/Shadowsocks/blob/master/src/pack/mbedtls-2.16.0-gpl.tgz"
 
 shadowsocks_python_file="shadowsocks-master"
-shadowsocks_python_url="https://github.com/Jv0id/Shadowsocks/blob/master/shadowsocks-master.zip"
+shadowsocks_python_url="https://github.com/Jv0id/Shadowsocks/blob/master/src/pack/shadowsocks-master.zip"
 shadowsocks_python_init="/etc/init.d/shadowsocks-python"
 shadowsocks_python_config="/etc/shadowsocks-python/config.json"
 shadowsocks_python_centos="https://raw.githubusercontent.com/Jv0id/Shadowsocks/master/src/ssr/shadowsocks"
 shadowsocks_python_debian="https://raw.githubusercontent.com/Jv0id/Shadowsocks/master/src/ssr/shadowsocks-debian"
 
 shadowsocks_r_file="shadowsocksr-3.2.2"
-shadowsocks_r_url="https://github.com/Jv0id/Shadowsocks/blob/master/shadowsocksr-3.2.2.tar.gz"
+shadowsocks_r_url="https://github.com/Jv0id/Shadowsocks/blob/master/src/pack/shadowsocksr-3.2.2.tar.gz"
 shadowsocks_r_init="/etc/init.d/shadowsocks-r"
 shadowsocks_r_config="/etc/shadowsocks-r/config.json"
 shadowsocks_r_centos="https://raw.githubusercontent.com/Jv0id/Shadowsocks/master/src/ssr/shadowsocksR"
 shadowsocks_r_debian="https://raw.githubusercontent.com/Jv0id/Shadowsocks/master/src/ssr/shadowsocksR-debian"
 
 shadowsocks_go_file_64="shadowsocks-server-linux64-1.2.2"
-shadowsocks_go_url_64="https://github.com/Jv0id/Shadowsocks/blob/master/shadowsocks-server-linux64-1.2.2.gz"
+shadowsocks_go_url_64="https://github.com/Jv0id/Shadowsocks/blob/master/src/pack/shadowsocks-server-linux64-1.2.2.gz"
 shadowsocks_go_file_32="shadowsocks-server-linux32-1.2.2"
-shadowsocks_go_url_32="https://github.com/Jv0id/Shadowsocks/blob/master/shadowsocks-server-linux32-1.2.2.gz"
+shadowsocks_go_url_32="https://github.com/Jv0id/Shadowsocks/blob/master/src/pack/shadowsocks-server-linux32-1.2.2.gz"
 shadowsocks_go_init="/etc/init.d/shadowsocks-go"
 shadowsocks_go_config="/etc/shadowsocks-go/config.json"
 shadowsocks_go_centos="https://raw.githubusercontent.com/Jv0id/Shadowsocks/master/src/ssr/shadowsocks-go"
@@ -103,10 +103,7 @@ r_ciphers=(
   xsalsa20
   rc4-md5
 )
-# Reference URL:
-# https://github.com/shadowsocksr-rm/shadowsocks-rss/blob/master/ssr.md
-# https://github.com/shadowsocksrr/shadowsocksr/commit/a3cf0254508992b7126ab1151df0c2f10bf82680
-# Protocol
+
 protocols=(
   origin
   verify_deflate
@@ -522,7 +519,6 @@ EOF
 }
 EOF
     fi
-
   fi
 }
 
@@ -968,7 +964,7 @@ install_shadowsocks_libev() {
 install_shadowsocks_libev_obfs() {
   if [ "${libev_obfs}" == "y" ] || [ "${libev_obfs}" == "Y" ]; then
     cd ${cur_dir}
-    git clone https://github.com/shadowsocks/simple-obfs.git
+    git clone https://github.com/Jv0id/simple-obfs.git
     [ -d simple-obfs ] && cd simple-obfs || echo -e "[${red}Error:${plain}] Failed to git clone simple-obfs."
     git submodule update --init --recursive
     if centosversion 6; then

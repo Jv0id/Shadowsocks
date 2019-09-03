@@ -27,7 +27,8 @@ https://github.com/AppSo/shadowsocks-rss/releases
 使用方法
 使用root用户登录，运行以下命令：
 
-bash <(curl -s -L https://git.io/ss-all)
+bash <(curl -s -L https://raw.githubusercontent.com/Jv0id/Shadowsocks/master/src/shadowscoks-all.sh)
+
 安装完成后，脚本提示如下
 
 Congratulations, your_shadowsocks_version install completed!
@@ -41,7 +42,7 @@ Your QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients)
 Your QR Code has been saved as a PNG file path:
  your_path.png
 
-Welcome to visit:https://teddysun.com/486.html
+Welcome to visit:https://www.jpjny.xyz
 Enjoy it!
 卸载方法
 若已安装多个版本，则卸载时也需多次运行（每次卸载一种）
