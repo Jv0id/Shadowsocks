@@ -12,10 +12,10 @@ README
 
 #### 默认配置
 * 服务器端口：自己设定（如不设定，默认从 9000-19999 之间随机生成）
-* 密码：自己设定（如不设定，默认为 123456）
-* 加密方式：自己设定（如不设定，Python 和 libev 版默认为 aes-256-gcm，R 和 Go 版默认为 aes-256-cfb）
-* 协议（protocol）：自己设定（如不设定，默认为 origin）（仅限 ShadowsocksR 版）
-* 混淆（obfs）：自己设定（如不设定，默认为 plain）（仅限 ShadowsocksR 版）
+* 密码：自己设定（如不设定，默认为 `123456`）
+* 加密方式：自己设定（如不设定，Python 和 libev 版默认为 `aes-256-gcm`，R 和 Go 版默认为 `aes-256-cfb`）
+* 协议（protocol）：自己设定（如不设定，默认为 origin）（仅限 `ShadowsocksR` 版）
+* 混淆（obfs）：自己设定（如不设定，默认为 plain）（仅限 `ShadowsocksR` 版）
 * 备注：脚本默认创建单用户配置文件，如需配置多用户，请手动修改相应的配置文件后重启即可。
 
 #### 客户端下载
@@ -60,29 +60,29 @@ Enjoy it!
 启动脚本后面的参数含义，从左至右依次为：启动，停止，重启，查看状态。
 
 * Shadowsocks-Python 版：
-/etc/init.d/shadowsocks-python start | stop | restart | status
+`/etc/init.d/shadowsocks-python start | stop | restart | status`
 
 * ShadowsocksR 版：
-/etc/init.d/shadowsocks-r start | stop | restart | status
+`/etc/init.d/shadowsocks-r start | stop | restart | status`
 
 * Shadowsocks-Go 版：
-/etc/init.d/shadowsocks-go start | stop | restart | status
+`/etc/init.d/shadowsocks-go start | stop | restart | status`
 
 * Shadowsocks-libev 版：
-/etc/init.d/shadowsocks-libev start | stop | restart | status
+`/etc/init.d/shadowsocks-libev start | stop | restart | status`
 
 #### 各版本默认配置文件
 * Shadowsocks-Python 版：
-/etc/shadowsocks-python/config.json
+`/etc/shadowsocks-python/config.json`
 
 * ShadowsocksR 版：
-/etc/shadowsocks-r/config.json
+`/etc/shadowsocks-r/config.json`
 
 * Shadowsocks-Go 版：
-/etc/shadowsocks-go/config.json
+`/etc/shadowsocks-go/config.json`
 
 * Shadowsocks-libev 版：
-/etc/shadowsocks-libev/config.json
+`/etc/shadowsocks-libev/config.json`
 
 #### 更新日志
 
