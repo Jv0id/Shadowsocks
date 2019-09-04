@@ -4,7 +4,7 @@ export PATH
 #
 # Auto install Shadowsocks Server (all version)
 #
-# Copyright (C) 2018 -2019 Jv0id <www.jpjny.xyz>
+# Jv0id <www.jpjny.xyz>
 #
 # System Required:  CentOS 6+, Debian7+, Ubuntu12+
 
