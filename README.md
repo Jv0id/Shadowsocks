@@ -29,7 +29,7 @@ ShadowsocksR 版 Windows 客户端
 使用root用户登录，运行以下命令：
 
 ```bash
-bash <(curl -s -L https://raw.githubusercontent.com/Jv0id/Shadowsocks/master/src/shadowscoks-all.sh)
+bash <(curl -s -L https://git.io/fjjvb)
 ```
 如果出现`curl: command not found`字样，请安装`curl`。    
 依据系统版本先运行：    
@@ -58,7 +58,7 @@ Enjoy it!
 使用root用户登录，运行以下命令：
 
 ```bash
-bash <(curl -s -L https://raw.githubusercontent.com/Jv0id/Shadowsocks/master/src/shadowscoks-all.sh) uninstall
+bash <(curl -s -L https://git.io/fjjvb) uninstall
 ```
 
 #### 启动脚本
