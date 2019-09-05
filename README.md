@@ -36,6 +36,7 @@ bash <(curl -s -L https://raw.githubusercontent.com/Jv0id/Shadowsocks/master/src
 `apt-get install curl`或`yum install curl`     
 然后再运行上面的命令。    
 
+安装过程大约需要10分钟，具体时间依据服务器的性能决定。
 安装完成后，脚本提示如下
 ```bash
 Congratulations, your_shadowsocks_version install completed!
@@ -57,7 +58,7 @@ Enjoy it!
 使用root用户登录，运行以下命令：
 
 ```bash
-./shadowsocks-all.sh uninstall
+bash <(curl -s -L https://raw.githubusercontent.com/Jv0id/Shadowsocks/master/src/shadowscoks-all.sh) uninstall
 ```
 
 #### 启动脚本
