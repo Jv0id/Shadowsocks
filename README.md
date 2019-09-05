@@ -31,6 +31,10 @@ ShadowsocksR 版 Windows 客户端
 ```bash
 bash <(curl -s -L https://raw.githubusercontent.com/Jv0id/Shadowsocks/master/src/shadowscoks-all.sh)
 ```
+如果出现`curl: command not found`字样，请安装`curl`。    
+依据系统版本先运行：    
+`apt-get install curl`或`yum install curl`     
+然后再运行上面的命令。    
 
 安装完成后，脚本提示如下
 ```bash
