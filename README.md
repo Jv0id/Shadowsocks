@@ -49,7 +49,7 @@ Your QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients)
 ss://your_encryption_method:your_password@your_server_ip:your_server_port
 Your QR Code has been saved as a PNG file path:your_path.png
 
-Welcome to visit:https://www.jpjny.xyz
+Welcome to visit:https://www.8void.com
 Enjoy it!
 ```
 
